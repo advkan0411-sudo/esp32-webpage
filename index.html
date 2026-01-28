@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ESP32 Sound Detection</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>ESP32 Sound Detection System</h1>
+
+  <!-- Login Section -->
+  <div id="login-section">
+    <h2>Login</h2>
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
+    <button onclick="login()">Login</button>
+    <p id="login-msg"></p>
+  </div>
+
+  <!-- Content Section (hidden until login) -->
+  <div id="content-section" style="display:none;">
+    <h2>About This Project</h2>
+    <p>
+      This ESP32-based system uses LM393 sound sensors to detect noise levels.
+      When sound is detected, the ESP32 triggers a buzzer and LED, and also
+      serves data via a web server.
+    </p>
+
+    <h2>Live Sound Level</h2>
+    <p>Current dB: <span id="db-value">--</span></p>
+    <p>Last update: <span id="time">--</span></p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
