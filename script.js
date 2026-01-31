@@ -1,4 +1,5 @@
-const ESP32_IP = "http://10.184.247.20"; // Replace with your ESP32 IP from Serial Monitor
+// ✅ Use the correct IP from Serial Monitor (example: 10.184.247.20)
+const ESP32_IP = "http://10.184.247.20"; 
 
 function login() {
   const user = document.getElementById('username').value;
@@ -13,7 +14,7 @@ function login() {
   }
 }
 
-// Fetch live sensor data every 2 seconds
+// 🔎 Fetch live sensor data every 2 seconds
 setInterval(() => {
   fetch(`${ESP32_IP}/data`)
     .then(response => response.json())
@@ -24,12 +25,16 @@ setInterval(() => {
     .catch(err => console.error("Error fetching data:", err));
 }, 2000);
 
-// Fetch serial logs every 3 seconds
+// 🔎 Fetch serial logs every 3 seconds
 setInterval(() => {
   fetch(`${ESP32_IP}/logs`)
     .then(response => response.text())
     .then(logs => {
+      // Show logs in the webpage
       document.getElementById('serial-output').innerText = logs;
+
+      // ✅ Extra debug: also print logs to browser console
+      console.log("Logs fetched from ESP32:", logs);
     })
     .catch(err => console.error("Error fetching logs:", err));
 }, 3000);
