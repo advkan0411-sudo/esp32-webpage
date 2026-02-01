@@ -1,5 +1,5 @@
 // ✅ Use the correct IP from Serial Monitor (example: 10.184.247.20)
-const ESP32_IP = "http://10.184.247.20"; 
+const ESP32_IP = "http://10.102.146.20"; 
 
 function login() {
   const user = document.getElementById('username').value;
