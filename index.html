@@ -8,7 +8,6 @@
 <body>
   <h1>ESP32 Sound Detection System</h1>
 
-  <!-- Login Section -->
   <div id="login-section">
     <h2>Login</h2>
     <input type="text" id="username" placeholder="Username">
@@ -17,21 +16,16 @@
     <p id="login-msg"></p>
   </div>
 
-  <!-- Content Section (hidden until login) -->
   <div id="content-section" style="display:none;">
     <h2>About This Project</h2>
-    <p>
-      This ESP32-based system uses LM393 sound sensors to detect noise levels.
-      When sound is detected, the ESP32 triggers a buzzer and LED, and also
-      serves data via a web server.
-    </p>
+    <p>This ESP32-based system uses LM393 sound sensors to detect noise levels.</p>
 
     <h2>Live Sound Level</h2>
-    <p>Current dB: <span id="db-value">--</span></p>
-    <p>Last update: <span id="time">--</span></p>
+    <p>Current dB: <span id="db-value">60 - 70dB</span></p>
+    <p>Last update: <span id="time">ESP32 is reachable!</span></p>
 
     <h2>Serial Output</h2>
-    <pre id="serial-output">Waiting for logs...</pre>
+    <pre id="serial-output">Sound detected!.</pre>
   </div>
 
   <script src="script.js"></script>

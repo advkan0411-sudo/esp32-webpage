@@ -30,8 +30,13 @@ setInterval(() => {
   fetch(`${ESP32_IP}/logs`)
     .then(response => response.text())
     .then(logs => {
-      // Show logs in the webpage
-      document.getElementById('serial-output').innerText = logs;
+      const output = document.getElementById('serial-output');
+
+      // ✅ Append new logs instead of replacing
+      output.innerText += "\n" + logs;
+
+      // ✅ Auto-scroll to bottom so latest logs are visible
+      output.scrollTop = output.scrollHeight;
 
       // ✅ Extra debug: also print logs to browser console
       console.log("Logs fetched from ESP32:", logs);
